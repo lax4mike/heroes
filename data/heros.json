@@ -1,0 +1,194 @@
+[
+    {
+        "name": "Superman",
+        "nickName": "Clark Kent (Kal-El)",
+        "profileImg": "http://www.superherodb.com/pictures/portraits/superman.jpg",
+        "bannerImg": "http://www.superherodb.com/pictures/topimage/superman.jpg",
+        "publisher": "dc comics",
+        "alignment": "good",
+        "stats": {
+            "intelligence": "100",
+            "strength": "100",
+            "speed": "100",
+            "durability": "100",
+            "power": "100",
+            "combat": "85"
+        },
+        "appearance": {
+            "gender": "male",
+            "race": "kryptonian",
+            "height": "6'3 // 191 cm",
+            "weight": "225 lb // 101 kg",
+            "eyeColor": "blue",
+            "hairColor": "black"
+        }
+    },
+    {
+        "name": "Batman",
+        "nickName": "Bruce Wayne",
+        "profileImg": "http://www.superherodb.com/pictures/portraits/batman.jpg",
+        "bannerImg": "http://www.superherodb.com/pictures/topimage/batman.jpg",
+        "publisher": "dc comics",
+        "alignment": "good",
+        "stats": {
+            "intelligence": "100",
+            "strength": "18",
+            "speed": "27",
+            "durability": "42",
+            "power": "37",
+            "combat": "100"
+        },
+        "appearance": {
+            "gender": "male",
+            "race": "human",
+            "height": "6'2 // 188 cm",
+            "weight": "210 lb // 95 kg",
+            "eyeColor": "blue",
+            "hairColor": "black"
+        }
+    },
+    {
+        "name": "Joker",
+        "nickName": "Jack Napier",
+        "profileImg": "http://www.superherodb.com/pictures/portraits/joker.jpg",
+        "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+        "publisher": "dc comics",
+        "alignment": "bad",
+        "stats": {
+            "intelligence": "100",
+            "strength": "10",
+            "speed": "12",
+            "durability": "56",
+            "power": "22",
+            "combat": "90"
+        },
+        "appearance": {
+            "gender": "male",
+            "race": "-",
+            "height": "6'3 // 191 cm",
+            "weight": "191 lb // 86 kg",
+            "eyeColor": "green",
+            "hairColor": "green"
+        }
+    },
+    {
+        "name": "Two-Face",
+        "nickName": "Harvey Dent",
+        "profileImg": "http://www.superherodb.com/pictures/portraits/two-face.jpg",
+        "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+        "publisher": "dc comics",
+        "alignment": "bad",
+        "stats": {
+            "intelligence": "88",
+            "strength": "10",
+            "speed": "12",
+            "durability": "14",
+            "power": "9",
+            "combat": "28"
+        },
+        "appearance": {
+            "gender": "male",
+            "race": "-",
+            "height": "6'0 // 183 cm",
+            "weight": "182 lb // 82 kg",
+            "eyeColor": "-",
+            "hairColor": "-"
+        }
+    },
+    {
+        "name": "Penguin",
+        "nickName": "Oswald Chesterfield Cobblepot",
+        "profileImg": "http://www.superherodb.com/pictures/portraits/penguin.jpg",
+        "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+        "publisher": "dc comics",
+        "alignment": "bad",
+        "stats": {
+            "intelligence": "75",
+            "strength": "10",
+            "speed": "12",
+            "durability": "28",
+            "power": "30",
+            "combat": "45"
+        },
+        "appearance": {
+            "gender": "male",
+            "race": "human",
+            "height": "5'2 // 157 cm",
+            "weight": "175 lb // 79 kg",
+            "eyeColor": "blue",
+            "hairColor": "black"
+        }
+    },
+    {
+        "name": "Spider-Man",
+        "nickName": "Peter Benjamin Parker",
+        "profileImg": "http://www.superherodb.com/pictures/portraits/spider-man.jpg",
+        "bannerImg": "http://www.superherodb.com/pictures/topimage/spider-man.jpg",
+        "publisher": "marvel comics",
+        "alignment": "good",
+        "stats": {
+            "intelligence": "88",
+            "strength": "55",
+            "speed": "60",
+            "durability": "74",
+            "power": "58",
+            "combat": "85"
+        },
+        "appearance": {
+            "gender": "male",
+            "race": "human",
+            "height": "5'10 // 178 cm",
+            "weight": "165 lb // 74 kg",
+            "eyeColor": "hazel",
+            "hairColor": "brown"
+        }
+    },
+    {
+        "name": "Spider-Man",
+        "nickName": "Peter Benjamin Parker",
+        "profileImg": "http://www.superherodb.com/pictures/portraits/spider-man.jpg",
+        "bannerImg": "http://www.superherodb.com/pictures/topimage/spider-man.jpg",
+        "publisher": "marvel comics",
+        "alignment": "good",
+        "stats": {
+            "intelligence": "88",
+            "strength": "55",
+            "speed": "60",
+            "durability": "74",
+            "power": "58",
+            "combat": "85"
+        },
+        "appearance": {
+            "gender": "male",
+            "race": "human",
+            "height": "5'10 // 178 cm",
+            "weight": "165 lb // 74 kg",
+            "eyeColor": "hazel",
+            "hairColor": "brown"
+        }
+    },
+    {
+        "name": "Wolverine",
+        "nickName": "James Howlett",
+        "profileImg": "http://www.superherodb.com/pictures/portraits/wolverine.jpg",
+        "bannerImg": "http://www.superherodb.com/pictures/topimage/wolverine.jpg",
+        "publisher": "marvel comics",
+        "alignment": "good",
+        "stats": {
+            "intelligence": "55",
+            "strength": "32",
+            "speed": "38",
+            "durability": "100",
+            "power": "44",
+            "combat": "100"
+        },
+        "appearance": {
+            "gender": "male",
+            "race": "mutant",
+            "height": "5'3 // 160 cm",
+            "weight": "300 lb // 135 kg",
+            "eyeColor": "blue",
+            "hairColor": "black"
+        }
+    }
+]
