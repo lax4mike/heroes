@@ -276,22 +276,28 @@
             }
         },
         {
-            "name": "",
-            "nickName": "",
+            "name": "Oracle (DC)",
+            "nickName": "Barbara Gordon",
             "url": "http://www.superherodb.com/oracle-dc/10-749/",
-            "profileImg": "http://www.superherodb.com",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/oracle_dc.jpg",
             "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
-            "publisher": "",
-            "alignment": "",
-            "stats": {},
+            "publisher": "dc comics",
+            "alignment": "good",
+            "stats": {
+                "intelligence": "75",
+                "strength": "11",
+                "speed": "23",
+                "durability": "28",
+                "power": "19",
+                "combat": "76"
+            },
             "appearance": {
-                "gender": "",
-                "race": "",
-                "height": " // 0 cm",
-                "weight": " lb // 0 kg",
-                "eyeColor": "",
-                "hairColor": "",
-                "skinColor": ""
+                "gender": "female",
+                "race": "-",
+                "height": "5'10 // 178 cm",
+                "weight": "132 lb // 59 kg",
+                "eyeColor": "blue",
+                "hairColor": "red"
             }
         },
         {
@@ -320,60 +326,79 @@
             }
         },
         {
-            "name": "",
-            "nickName": "",
+            "name": "Deathstroke",
+            "nickName": "Slade Joseph Wilson",
             "url": "http://www.superherodb.com/deathstroke/10-672/",
-            "profileImg": "http://www.superherodb.com",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/deathstroke.jpg",
             "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
-            "publisher": "",
-            "alignment": "",
-            "stats": {},
+            "publisher": "dc comics",
+            "alignment": "neutral",
+            "stats": {
+                "intelligence": "75",
+                "strength": "30",
+                "speed": "35",
+                "durability": "100",
+                "power": "36",
+                "combat": "90"
+            },
             "appearance": {
-                "gender": "",
-                "race": "",
-                "height": " // 0 cm",
-                "weight": " lb // 0 kg",
-                "eyeColor": "",
-                "hairColor": "",
-                "skinColor": ""
+                "gender": "male",
+                "race": "human",
+                "height": "6'4 // 193 cm",
+                "weight": "225 lb // 101 kg",
+                "eyeColor": "blue",
+                "hairColor": "white"
             }
         },
         {
-            "name": "",
-            "nickName": "",
+            "name": "Anti-Monitor",
+            "nickName": "-",
             "url": "http://www.superherodb.com/anti-monitor/10-1292/",
-            "profileImg": "http://www.superherodb.com",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/anti-monitor.jpg",
             "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
-            "publisher": "",
-            "alignment": "",
-            "stats": {},
+            "publisher": "dc comics",
+            "alignment": "bad",
+            "stats": {
+                "intelligence": "88",
+                "strength": "90",
+                "speed": "38",
+                "durability": "90",
+                "power": "100",
+                "combat": "90"
+            },
             "appearance": {
-                "gender": "",
-                "race": "",
-                "height": " // 0 cm",
-                "weight": " lb // 0 kg",
-                "eyeColor": "",
-                "hairColor": "",
-                "skinColor": ""
+                "gender": "male",
+                "race": "-",
+                "height": "- // 0 cm",
+                "weight": "- lb // 0 kg",
+                "eyeColor": "yellow",
+                "hairColor": "-"
             }
         },
         {
-            "name": "",
-            "nickName": "",
+            "name": "Darkseid",
+            "nickName": "Uxas",
             "url": "http://www.superherodb.com/darkseid/10-668/",
-            "profileImg": "http://www.superherodb.com",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/darkseid.jpg",
             "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
-            "publisher": "",
-            "alignment": "",
-            "stats": {},
+            "publisher": "dc comics",
+            "alignment": "bad",
+            "stats": {
+                "intelligence": "88",
+                "strength": "100",
+                "speed": "23",
+                "durability": "100",
+                "power": "100",
+                "combat": "95"
+            },
             "appearance": {
-                "gender": "",
-                "race": "",
-                "height": " // 0 cm",
-                "weight": " lb // 0 kg",
-                "eyeColor": "",
-                "hairColor": "",
-                "skinColor": ""
+                "gender": "male",
+                "race": "new god",
+                "height": "8'9 // 267 cm",
+                "weight": "1815 lb // 817 kg",
+                "eyeColor": "red",
+                "hairColor": "no hair",
+                "skinColor": "grey"
             }
         },
         {

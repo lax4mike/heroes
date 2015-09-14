@@ -17,8 +17,8 @@ var heroUrls = require("./heroUrls.js");
 // generate heros.json
 Promise.all(
     // go through all the hero urls, and scrape the data
-    heroUrls.map(function(heroUrl){
-        return fetchHero(heroUrl);
+    heroUrls.map(function(heroUrl, i){
+        return fetchHero(heroUrl, i * 500);
     })
 ).then(function(allHeros){
 
@@ -38,10 +38,19 @@ Promise.all(
 
 
 // eg url: http://www.superherodb.com/superman/10-791/
-function fetchHero(url){
+function fetchHero(url, delay){
 
     // returns a promise
     return new Promise(function (resolve, reject) {
+
+        setTimeout(function(){
+            makeRequest(resolve, reject);
+        }, delay);
+
+    });
+
+
+    function makeRequest(resolve, reject){
 
         // make an http request to get the html of the page
         request(url, function(error, response, html){
@@ -49,8 +58,15 @@ function fetchHero(url){
             // abort if there is an error
             if(error){ console.error(error); reject(error); return; }
 
+            console.log("scraping:", url);
+
             // load the html into cheerio https://github.com/cheeriojs/cheerio
             var $ = cheerio.load(html);
+
+
+            if ($(".titlehome h1").text() === ""){
+                console.error("failed:", html);
+            }
 
             // create our hero object
             var hero = {
@@ -141,7 +157,7 @@ function fetchHero(url){
             
         });
 
-    });
+    }
 }
 
 // helper funtion to convert a string to camelCase
