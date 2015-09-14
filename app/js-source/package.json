@@ -1,0 +1,6 @@
+{
+  "name": "bayer-corn",
+  "browserify-shim": {
+    "react"      : "global:React"
+  }
+}

@@ -1,0 +1,25 @@
+.hero {
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    text-decoration: none;
+}
+
+.hero__profileImg {
+
+    flex: 0 0 auto;
+
+    img {
+        max-width: 150px;
+    }
+}
+
+.hero__info {
+    flex: 1 1 auto;
+    padding-left: 8px;
+}
+
+.hero__name {
+    font-size: 1.25em;
+}

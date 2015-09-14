@@ -9,21 +9,27 @@ var request = require("request"),
 require("es6-shim");
 
 
-var outputFile = path.resolve("../data/heros.json");
+var outputFile = path.resolve("../app/data/heros.json");
 
 // list of hero urls
-var heros = require("./heros.js");
+var heroUrls = require("./heroUrls.js");
 
 // generate heros.json
 Promise.all(
     // go through all the hero urls, and scrape the data
-    heros.map(function(heroUrl){
+    heroUrls.map(function(heroUrl){
         return fetchHero(heroUrl);
     })
 ).then(function(allHeros){
+
+    var output = {
+        heros: allHeros
+    };
+
     // write the data to the json file
     mkdirp.sync(path.dirname(outputFile));
-    fs.writeFile(outputFile, JSON.stringify(allHeros, null, 4), {encoding: "utf8"});     
+    fs.writeFile(outputFile, JSON.stringify(output, null, 4), {encoding: "utf8"});     
+    
     console.log("Hooray! ", outputFile, " was generated!");
 })
 .catch(function(error){
@@ -49,7 +55,8 @@ function fetchHero(url){
             // create our hero object
             var hero = {
                 name: $(".titlehome h1").text(),
-                nickName: $(".titlehome h2").text()
+                nickName: $(".titlehome h2").text(),
+                url: url
             };
 
             var imgBase = "http://www.superherodb.com";
