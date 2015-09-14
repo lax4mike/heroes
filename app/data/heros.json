@@ -126,51 +126,76 @@
             }
         },
         {
-            "name": "Spider-Man",
-            "nickName": "Peter Benjamin Parker",
-            "url": "http://www.superherodb.com/spider-man/10-133/",
-            "profileImg": "http://www.superherodb.com/pictures/portraits/spider-man.jpg",
-            "bannerImg": "http://www.superherodb.com/pictures/topimage/spider-man.jpg",
-            "publisher": "marvel comics",
+            "name": "Nightwing",
+            "nickName": "Richard John Grayson",
+            "url": "http://www.superherodb.com/nightwing/10-851/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/nightwing.jpg",
+            "bannerImg": "http://www.superherodb.com/pictures/topimage/nightwing.jpg",
+            "publisher": "dc comics",
             "alignment": "good",
             "stats": {
                 "intelligence": "88",
-                "strength": "55",
-                "speed": "60",
-                "durability": "74",
-                "power": "58",
+                "strength": "11",
+                "speed": "33",
+                "durability": "28",
+                "power": "36",
+                "combat": "100"
+            },
+            "appearance": {
+                "gender": "male",
+                "race": "human",
+                "height": "5'10 // 178 cm",
+                "weight": "175 lb // 79 kg",
+                "eyeColor": "blue",
+                "hairColor": "black"
+            }
+        },
+        {
+            "name": "Red Robin",
+            "nickName": "Timothy Jackson Drake",
+            "url": "http://www.superherodb.com/red-robin/10-10009/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/red-robin.jpg",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "dc comics",
+            "alignment": "good",
+            "stats": {
+                "intelligence": "81",
+                "strength": "11",
+                "speed": "27",
+                "durability": "32",
+                "power": "29",
+                "combat": "80"
+            },
+            "appearance": {
+                "gender": "male",
+                "race": "human",
+                "height": "5'5 // 165 cm",
+                "weight": "125 lb // 56 kg",
+                "eyeColor": "blue",
+                "hairColor": "black"
+            }
+        },
+        {
+            "name": "Robin I",
+            "nickName": "Richard John Grayson",
+            "url": "http://www.superherodb.com/robin-i/10-850/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/robin-i.jpg",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "dc comics",
+            "alignment": "good",
+            "stats": {
+                "intelligence": "88",
+                "strength": "11",
+                "speed": "27",
+                "durability": "28",
+                "power": "32",
                 "combat": "85"
             },
             "appearance": {
                 "gender": "male",
                 "race": "human",
                 "height": "5'10 // 178 cm",
-                "weight": "165 lb // 74 kg",
-                "eyeColor": "hazel",
-                "hairColor": "brown"
-            }
-        },
-        {
-            "name": "Wolverine",
-            "nickName": "James Howlett",
-            "url": "http://www.superherodb.com/wolverine/10-161/",
-            "profileImg": "http://www.superherodb.com/pictures/portraits/wolverine.jpg",
-            "bannerImg": "http://www.superherodb.com/pictures/topimage/wolverine.jpg",
-            "publisher": "marvel comics",
-            "alignment": "good",
-            "stats": {
-                "intelligence": "55",
-                "strength": "32",
-                "speed": "38",
-                "durability": "100",
-                "power": "44",
-                "combat": "100"
-            },
-            "appearance": {
-                "gender": "male",
-                "race": "mutant",
-                "height": "5'3 // 160 cm",
-                "weight": "300 lb // 135 kg",
+                "weight": "175 lb // 79 kg",
                 "eyeColor": "blue",
                 "hairColor": "black"
             }
@@ -198,6 +223,258 @@
                 "weight": "135 lb // 61 kg",
                 "eyeColor": "green",
                 "hairColor": "black"
+            }
+        },
+        {
+            "name": "Batgirl VI",
+            "nickName": "Stephanie Brown",
+            "url": "http://www.superherodb.com/batgirl-vi/10-1398/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/batgirl-6.jpg",
+            "bannerImg": "http://www.superherodb.com/pictures/topimage/batgirl-6.jpg",
+            "publisher": "dc comics",
+            "alignment": "good",
+            "stats": {
+                "intelligence": "75",
+                "strength": "10",
+                "speed": "23",
+                "durability": "28",
+                "power": "22",
+                "combat": "80"
+            },
+            "appearance": {
+                "gender": "female",
+                "race": "-",
+                "height": "5'6 // 168 cm",
+                "weight": "135 lb // 61 kg",
+                "eyeColor": "blue",
+                "hairColor": "blond"
+            }
+        },
+        {
+            "name": "Harley Quinn",
+            "nickName": "Harleen Francis Quinzel",
+            "url": "http://www.superherodb.com/harley-quinn/10-701/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/harley-quinn.jpg",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "dc comics",
+            "alignment": "bad",
+            "stats": {
+                "intelligence": "81",
+                "strength": "12",
+                "speed": "33",
+                "durability": "42",
+                "power": "43",
+                "combat": "80"
+            },
+            "appearance": {
+                "gender": "female",
+                "race": "human",
+                "height": "5'7 // 170 cm",
+                "weight": "140 lb // 63 kg",
+                "eyeColor": "blue",
+                "hairColor": "blond"
+            }
+        },
+        {
+            "name": "",
+            "nickName": "",
+            "url": "http://www.superherodb.com/oracle-dc/10-749/",
+            "profileImg": "http://www.superherodb.com",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "",
+            "alignment": "",
+            "stats": {},
+            "appearance": {
+                "gender": "",
+                "race": "",
+                "height": " // 0 cm",
+                "weight": " lb // 0 kg",
+                "eyeColor": "",
+                "hairColor": "",
+                "skinColor": ""
+            }
+        },
+        {
+            "name": "Red Hood",
+            "nickName": "Jason Peter Todd",
+            "url": "http://www.superherodb.com/red-hood/10-932/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/red-hood.jpg",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "dc comics",
+            "alignment": "neutral",
+            "stats": {
+                "intelligence": "75",
+                "strength": "12",
+                "speed": "23",
+                "durability": "28",
+                "power": "24",
+                "combat": "95"
+            },
+            "appearance": {
+                "gender": "male",
+                "race": "human",
+                "height": "6'0 // 183 cm",
+                "weight": "180 lb // 81 kg",
+                "eyeColor": "blue",
+                "hairColor": "black"
+            }
+        },
+        {
+            "name": "",
+            "nickName": "",
+            "url": "http://www.superherodb.com/deathstroke/10-672/",
+            "profileImg": "http://www.superherodb.com",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "",
+            "alignment": "",
+            "stats": {},
+            "appearance": {
+                "gender": "",
+                "race": "",
+                "height": " // 0 cm",
+                "weight": " lb // 0 kg",
+                "eyeColor": "",
+                "hairColor": "",
+                "skinColor": ""
+            }
+        },
+        {
+            "name": "",
+            "nickName": "",
+            "url": "http://www.superherodb.com/anti-monitor/10-1292/",
+            "profileImg": "http://www.superherodb.com",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "",
+            "alignment": "",
+            "stats": {},
+            "appearance": {
+                "gender": "",
+                "race": "",
+                "height": " // 0 cm",
+                "weight": " lb // 0 kg",
+                "eyeColor": "",
+                "hairColor": "",
+                "skinColor": ""
+            }
+        },
+        {
+            "name": "",
+            "nickName": "",
+            "url": "http://www.superherodb.com/darkseid/10-668/",
+            "profileImg": "http://www.superherodb.com",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "",
+            "alignment": "",
+            "stats": {},
+            "appearance": {
+                "gender": "",
+                "race": "",
+                "height": " // 0 cm",
+                "weight": " lb // 0 kg",
+                "eyeColor": "",
+                "hairColor": "",
+                "skinColor": ""
+            }
+        },
+        {
+            "name": "Riddler",
+            "nickName": "Edward Nigma",
+            "url": "http://www.superherodb.com/riddler/10-768/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/riddler.jpg",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "dc comics",
+            "alignment": "bad",
+            "stats": {
+                "intelligence": "100",
+                "strength": "10",
+                "speed": "12",
+                "durability": "14",
+                "power": "10",
+                "combat": "14"
+            },
+            "appearance": {
+                "gender": "male",
+                "race": "-",
+                "height": "- // 0 cm",
+                "weight": "- lb // 0 kg",
+                "eyeColor": "-",
+                "hairColor": "-"
+            }
+        },
+        {
+            "name": "Huntress",
+            "nickName": "Helena Rosa Bertinelli",
+            "url": "http://www.superherodb.com/huntress/10-707/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/huntress.jpg",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "dc comics",
+            "alignment": "good",
+            "stats": {
+                "intelligence": "69",
+                "strength": "10",
+                "speed": "23",
+                "durability": "28",
+                "power": "34",
+                "combat": "95"
+            },
+            "appearance": {
+                "gender": "female",
+                "race": "-",
+                "height": "5'11 // 180 cm",
+                "weight": "130 lb // 59 kg",
+                "eyeColor": "blue",
+                "hairColor": "black"
+            }
+        },
+        {
+            "name": "Ra's Al Ghul",
+            "nickName": "Ra's Al Ghul",
+            "url": "http://www.superherodb.com/ras-al-ghul/10-761/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/ras-al-ghul.jpg",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "dc comics",
+            "alignment": "bad",
+            "stats": {
+                "intelligence": "100",
+                "strength": "28",
+                "speed": "32",
+                "durability": "42",
+                "power": "27",
+                "combat": "100"
+            },
+            "appearance": {
+                "gender": "male",
+                "race": "human",
+                "height": "6'4 // 193 cm",
+                "weight": "215 lb // 97 kg",
+                "eyeColor": "green",
+                "hairColor": "grey"
+            }
+        },
+        {
+            "name": "Killer Croc",
+            "nickName": "Waylon Jones",
+            "url": "http://www.superherodb.com/killer-croc/10-723/",
+            "profileImg": "http://www.superherodb.com/pictures/portraits/killer-croc.jpg",
+            "bannerImg": "http://www.superherodb.com/img/homeheader.jpg",
+            "publisher": "dc comics",
+            "alignment": "bad",
+            "stats": {
+                "intelligence": "25",
+                "strength": "48",
+                "speed": "33",
+                "durability": "85",
+                "power": "36",
+                "combat": "60"
+            },
+            "appearance": {
+                "gender": "male",
+                "race": "-",
+                "height": "8'0 // 244 cm",
+                "weight": "790 lb // 356 kg",
+                "eyeColor": "red",
+                "hairColor": "no hair",
+                "skinColor": "green"
             }
         }
     ]
