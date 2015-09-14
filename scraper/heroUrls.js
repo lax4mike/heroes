@@ -4,7 +4,19 @@ module.exports = [
     "http://www.superherodb.com/joker/10-719/",
     "http://www.superherodb.com/two-face/10-802/",
     "http://www.superherodb.com/penguin/10-753/",
-    "http://www.superherodb.com/spider-man/10-133/",
-    "http://www.superherodb.com/wolverine/10-161/",
-    "http://www.superherodb.com/catwoman/10-659/"
+    "http://www.superherodb.com/nightwing/10-851/",
+    "http://www.superherodb.com/red-robin/10-10009/",
+    "http://www.superherodb.com/robin-i/10-850/",
+    "http://www.superherodb.com/catwoman/10-659/",
+    "http://www.superherodb.com/batgirl-vi/10-1398/",
+    "http://www.superherodb.com/harley-quinn/10-701/",
+    "http://www.superherodb.com/oracle-dc/10-749/",
+    "http://www.superherodb.com/red-hood/10-932/",
+    "http://www.superherodb.com/deathstroke/10-672/",
+    "http://www.superherodb.com/anti-monitor/10-1292/",
+    "http://www.superherodb.com/darkseid/10-668/",
+    "http://www.superherodb.com/riddler/10-768/",
+    "http://www.superherodb.com/huntress/10-707/",
+    "http://www.superherodb.com/ras-al-ghul/10-761/",
+    "http://www.superherodb.com/killer-croc/10-723/"
 ];
