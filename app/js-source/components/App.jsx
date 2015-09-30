@@ -1,12 +1,14 @@
 import React, { PropTypes } from "react";
-import HeroCard from "./HeroCard.jsx";
+import HeroList   from "./HeroList.jsx";
+import JsonViewer from "./JsonViewer.jsx";
 
 export default React.createClass({
 
     displayName: "App",
 
     propTypes: {
-        allHeros : PropTypes.array.isRequired
+        allHeros : PropTypes.array.isRequired,
+        myData   : PropTypes.any.isRequired
     },
 
     render: function(){
@@ -19,17 +21,17 @@ export default React.createClass({
                     <a href="data/heros.json" target="_blank">heros.json</a>
                 </div>
 
-
                 <br/>
-            
-                <div className="hero-list">
-                    {this.props.allHeros.map(function(hero, i){
-                        return (
-                            <HeroCard hero={hero} key={i}/>
-                        );
-                    })}
-                </div>
-               
+
+                <h2>My Data</h2>
+                <JsonViewer data={this.props.myData} />
+
+
+
+                {/*
+                <HeroList allHeros={this.props.allHeros} />
+                */}
+
             </div>
         );
     }

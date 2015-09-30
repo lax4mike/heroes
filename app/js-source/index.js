@@ -11,11 +11,10 @@ fetch("data/heros.json")
 
         const allHeros = json.heros;
 
-        // pass this to App!
         const myData = getMyData(allHeros); 
 
         React.render(
-            <App allHeros={allHeros} />, 
+            <App allHeros={allHeros} myData={myData} />, 
             document.querySelector(".react-mount")
         );
 
@@ -25,6 +24,7 @@ fetch("data/heros.json")
 function getMyData(allHeros){
 
     // Your code here!
-
-    return allHeros;
+    let myData = allHeros;
+    
+    return myData;
 }

@@ -9,12 +9,12 @@
             "publisher": "dc comics",
             "alignment": "good",
             "stats": {
-                "intelligence": "100",
-                "strength": "100",
-                "speed": "100",
-                "durability": "100",
-                "power": "100",
-                "combat": "85"
+                "intelligence": 100,
+                "strength": 100,
+                "speed": 100,
+                "durability": 100,
+                "power": 100,
+                "combat": 85
             },
             "appearance": {
                 "gender": "male",
@@ -34,12 +34,12 @@
             "publisher": "dc comics",
             "alignment": "good",
             "stats": {
-                "intelligence": "100",
-                "strength": "18",
-                "speed": "27",
-                "durability": "42",
-                "power": "37",
-                "combat": "100"
+                "intelligence": 100,
+                "strength": 18,
+                "speed": 27,
+                "durability": 42,
+                "power": 37,
+                "combat": 100
             },
             "appearance": {
                 "gender": "male",
@@ -59,12 +59,12 @@
             "publisher": "dc comics",
             "alignment": "bad",
             "stats": {
-                "intelligence": "100",
-                "strength": "10",
-                "speed": "12",
-                "durability": "56",
-                "power": "22",
-                "combat": "90"
+                "intelligence": 100,
+                "strength": 10,
+                "speed": 12,
+                "durability": 56,
+                "power": 22,
+                "combat": 90
             },
             "appearance": {
                 "gender": "male",
@@ -84,12 +84,12 @@
             "publisher": "dc comics",
             "alignment": "bad",
             "stats": {
-                "intelligence": "88",
-                "strength": "10",
-                "speed": "12",
-                "durability": "14",
-                "power": "9",
-                "combat": "28"
+                "intelligence": 88,
+                "strength": 10,
+                "speed": 12,
+                "durability": 14,
+                "power": 9,
+                "combat": 28
             },
             "appearance": {
                 "gender": "male",
@@ -109,12 +109,12 @@
             "publisher": "dc comics",
             "alignment": "bad",
             "stats": {
-                "intelligence": "75",
-                "strength": "10",
-                "speed": "12",
-                "durability": "28",
-                "power": "30",
-                "combat": "45"
+                "intelligence": 75,
+                "strength": 10,
+                "speed": 12,
+                "durability": 28,
+                "power": 30,
+                "combat": 45
             },
             "appearance": {
                 "gender": "male",
@@ -134,12 +134,12 @@
             "publisher": "dc comics",
             "alignment": "good",
             "stats": {
-                "intelligence": "88",
-                "strength": "11",
-                "speed": "33",
-                "durability": "28",
-                "power": "36",
-                "combat": "100"
+                "intelligence": 88,
+                "strength": 11,
+                "speed": 33,
+                "durability": 28,
+                "power": 36,
+                "combat": 100
             },
             "appearance": {
                 "gender": "male",
@@ -159,12 +159,12 @@
             "publisher": "dc comics",
             "alignment": "good",
             "stats": {
-                "intelligence": "81",
-                "strength": "11",
-                "speed": "27",
-                "durability": "32",
-                "power": "29",
-                "combat": "80"
+                "intelligence": 81,
+                "strength": 11,
+                "speed": 27,
+                "durability": 32,
+                "power": 29,
+                "combat": 80
             },
             "appearance": {
                 "gender": "male",
@@ -184,12 +184,12 @@
             "publisher": "dc comics",
             "alignment": "good",
             "stats": {
-                "intelligence": "88",
-                "strength": "11",
-                "speed": "27",
-                "durability": "28",
-                "power": "32",
-                "combat": "85"
+                "intelligence": 88,
+                "strength": 11,
+                "speed": 27,
+                "durability": 28,
+                "power": 32,
+                "combat": 85
             },
             "appearance": {
                 "gender": "male",
@@ -209,12 +209,12 @@
             "publisher": "dc comics",
             "alignment": "good",
             "stats": {
-                "intelligence": "69",
-                "strength": "11",
-                "speed": "33",
-                "durability": "28",
-                "power": "27",
-                "combat": "85"
+                "intelligence": 69,
+                "strength": 11,
+                "speed": 33,
+                "durability": 28,
+                "power": 27,
+                "combat": 85
             },
             "appearance": {
                 "gender": "female",
@@ -234,12 +234,12 @@
             "publisher": "dc comics",
             "alignment": "good",
             "stats": {
-                "intelligence": "75",
-                "strength": "10",
-                "speed": "23",
-                "durability": "28",
-                "power": "22",
-                "combat": "80"
+                "intelligence": 75,
+                "strength": 10,
+                "speed": 23,
+                "durability": 28,
+                "power": 22,
+                "combat": 80
             },
             "appearance": {
                 "gender": "female",
@@ -259,12 +259,12 @@
             "publisher": "dc comics",
             "alignment": "bad",
             "stats": {
-                "intelligence": "81",
-                "strength": "12",
-                "speed": "33",
-                "durability": "42",
-                "power": "43",
-                "combat": "80"
+                "intelligence": 81,
+                "strength": 12,
+                "speed": 33,
+                "durability": 42,
+                "power": 43,
+                "combat": 80
             },
             "appearance": {
                 "gender": "female",
@@ -284,12 +284,12 @@
             "publisher": "dc comics",
             "alignment": "good",
             "stats": {
-                "intelligence": "75",
-                "strength": "11",
-                "speed": "23",
-                "durability": "28",
-                "power": "19",
-                "combat": "76"
+                "intelligence": 75,
+                "strength": 11,
+                "speed": 23,
+                "durability": 28,
+                "power": 19,
+                "combat": 76
             },
             "appearance": {
                 "gender": "female",
@@ -309,12 +309,12 @@
             "publisher": "dc comics",
             "alignment": "neutral",
             "stats": {
-                "intelligence": "75",
-                "strength": "12",
-                "speed": "23",
-                "durability": "28",
-                "power": "24",
-                "combat": "95"
+                "intelligence": 75,
+                "strength": 12,
+                "speed": 23,
+                "durability": 28,
+                "power": 24,
+                "combat": 95
             },
             "appearance": {
                 "gender": "male",
@@ -334,12 +334,12 @@
             "publisher": "dc comics",
             "alignment": "neutral",
             "stats": {
-                "intelligence": "75",
-                "strength": "30",
-                "speed": "35",
-                "durability": "100",
-                "power": "36",
-                "combat": "90"
+                "intelligence": 75,
+                "strength": 30,
+                "speed": 35,
+                "durability": 100,
+                "power": 36,
+                "combat": 90
             },
             "appearance": {
                 "gender": "male",
@@ -359,12 +359,12 @@
             "publisher": "dc comics",
             "alignment": "bad",
             "stats": {
-                "intelligence": "88",
-                "strength": "90",
-                "speed": "38",
-                "durability": "90",
-                "power": "100",
-                "combat": "90"
+                "intelligence": 88,
+                "strength": 90,
+                "speed": 38,
+                "durability": 90,
+                "power": 100,
+                "combat": 90
             },
             "appearance": {
                 "gender": "male",
@@ -384,12 +384,12 @@
             "publisher": "dc comics",
             "alignment": "bad",
             "stats": {
-                "intelligence": "88",
-                "strength": "100",
-                "speed": "23",
-                "durability": "100",
-                "power": "100",
-                "combat": "95"
+                "intelligence": 88,
+                "strength": 100,
+                "speed": 23,
+                "durability": 100,
+                "power": 100,
+                "combat": 95
             },
             "appearance": {
                 "gender": "male",
@@ -410,12 +410,12 @@
             "publisher": "dc comics",
             "alignment": "bad",
             "stats": {
-                "intelligence": "100",
-                "strength": "10",
-                "speed": "12",
-                "durability": "14",
-                "power": "10",
-                "combat": "14"
+                "intelligence": 100,
+                "strength": 10,
+                "speed": 12,
+                "durability": 14,
+                "power": 10,
+                "combat": 14
             },
             "appearance": {
                 "gender": "male",
@@ -435,12 +435,12 @@
             "publisher": "dc comics",
             "alignment": "good",
             "stats": {
-                "intelligence": "69",
-                "strength": "10",
-                "speed": "23",
-                "durability": "28",
-                "power": "34",
-                "combat": "95"
+                "intelligence": 69,
+                "strength": 10,
+                "speed": 23,
+                "durability": 28,
+                "power": 34,
+                "combat": 95
             },
             "appearance": {
                 "gender": "female",
@@ -460,12 +460,12 @@
             "publisher": "dc comics",
             "alignment": "bad",
             "stats": {
-                "intelligence": "100",
-                "strength": "28",
-                "speed": "32",
-                "durability": "42",
-                "power": "27",
-                "combat": "100"
+                "intelligence": 100,
+                "strength": 28,
+                "speed": 32,
+                "durability": 42,
+                "power": 27,
+                "combat": 100
             },
             "appearance": {
                 "gender": "male",
@@ -485,12 +485,12 @@
             "publisher": "dc comics",
             "alignment": "bad",
             "stats": {
-                "intelligence": "25",
-                "strength": "48",
-                "speed": "33",
-                "durability": "85",
-                "power": "36",
-                "combat": "60"
+                "intelligence": 25,
+                "strength": 48,
+                "speed": 33,
+                "durability": 85,
+                "power": 36,
+                "combat": 60
             },
             "appearance": {
                 "gender": "male",

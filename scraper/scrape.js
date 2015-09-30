@@ -120,7 +120,7 @@ function fetchHero(url, delay){
                 .map(function(i, el){
                     return  {
                         label: $(el).find(".gridbarlabel").text().toLowerCase(),
-                        value: $(el).find(".gridbarvalue").text().toLowerCase()
+                        value: parseInt($(el).find(".gridbarvalue").text().toLowerCase())
                     };
                 })
                 .toArray()
