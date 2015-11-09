@@ -5,7 +5,7 @@ export default React.createClass({
     displayName: "HeroCard",
 
     propTypes: {
-        allHeros: PropTypes.arrayOf(PropTypes.shape({
+        allHeroes: PropTypes.arrayOf(PropTypes.shape({
             name       : PropTypes.string.isRequired,
             profileImg : PropTypes.string.isRequired,
             url        : PropTypes.string.isRequired
@@ -16,7 +16,7 @@ export default React.createClass({
 
         return (
             <div className="hero-list">
-                {this.props.allHeros.map(function(hero, i){
+                {this.props.allHeroes.map(function(hero, i){
                     return (
                         <div className="hero" key={i}>
                             <div className="hero__profileImg">
@@ -29,7 +29,7 @@ export default React.createClass({
                                 <div>
                                     <a href={hero.url} target="_blank">{hero.url}</a>
                                 </div>
-                                
+
                                 <table>
                                     { Object.keys(hero.stats).map(function(stat){
                                         return (

@@ -11,7 +11,7 @@ var gulp           = require("gulp"),
 
 var fs = require("fs");
 
-// dev/default settings 
+// dev/default settings
 utils.setTaskConfig("js", {
 
     default: {
@@ -19,7 +19,7 @@ utils.setTaskConfig("js", {
         src: config.root + "/js-source/index.js",
         dest: config.dest + "/js",
 
-        filename: "superheros.js",
+        filename: "superheroes.js",
 
         // js uglify options , to skip, set value to false or omit entirely
         // otherwise, pass options object (can be empty {})
@@ -103,4 +103,3 @@ gulp.task("js", function(){
         .pipe(gulp.dest(js.dest));
 
 });
-

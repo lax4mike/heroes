@@ -16,7 +16,7 @@ utils.setTaskConfig("css", {
         src: config.root + "/scss/**/*.scss",
         dest: config.dest + "/css/",
 
-        filename: "superheros.css",
+        filename: "superheroes.css",
 
         sass: {
             outputStyle: "nested",
@@ -62,9 +62,8 @@ gulp.task("css", function() {
     if (css.sass && css.sass.outputStyle !== "compressed"){
         gulpCss.pipe(header("/* This file is generated.  DO NOT EDIT. */ \n"));
     }
-        
+
     return gulpCss
         .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(css.dest));
 });
-

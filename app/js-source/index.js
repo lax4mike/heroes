@@ -2,29 +2,29 @@ import React from "react";
 import App   from "./components/App.jsx";
 
 
-fetch("data/heros.json")
+fetch("data/heroes.json")
     .then(function(response){
         // Convert response to JSON
         return response.json();
     })
     .then(function(json){
 
-        const allHeros = json.heros;
+        const allHeroes = json.heroes;
 
-        const myData = getMyData(allHeros); 
+        const myData = getMyData(allHeroes);
 
         React.render(
-            <App allHeros={allHeros} myData={myData} />, 
+            <App allHeroes={allHeroes} myData={myData} />,
             document.querySelector(".react-mount")
         );
 
     });
 
 
-function getMyData(allHeros){
+function getMyData(allHeroes){
 
     // Your code here!
-    let myData = allHeros;
-    
+    let myData = allHeroes;
+
     return myData;
 }

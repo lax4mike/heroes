@@ -7,8 +7,8 @@ export default React.createClass({
     displayName: "App",
 
     propTypes: {
-        allHeros : PropTypes.array.isRequired,
-        myData   : PropTypes.any.isRequired
+        allHeroes : PropTypes.array.isRequired,
+        myData    : PropTypes.any.isRequired
     },
 
     render: function(){
@@ -17,8 +17,8 @@ export default React.createClass({
             <div className="app">
 
                 <div className="header">
-                    <h1>Superheros!</h1>
-                    <a href="data/heros.json" target="_blank">heros.json</a>
+                    <h1>Superheroes!</h1>
+                    <a href="data/heroes.json" target="_blank">heroes.json</a>
                 </div>
 
                 <br/>
@@ -29,7 +29,7 @@ export default React.createClass({
 
 
                 {/*
-                <HeroList allHeros={this.props.allHeros} />
+                <HeroList allHeroes={this.props.allHeroes} />
                 */}
 
             </div>
