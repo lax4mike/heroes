@@ -7,3 +7,10 @@
 * Use Array.filter and Array.map create a list of the names of the heroes with alignment good and alignment bad
 * Use Array.map and Array.sort to create a list of hero names and strength ordered by strength
 * Use Array.map and Array.sort to create a list of hero names and intelligence ordered by intelligence
+
+#Learn
+
+Higher order functions/filter: https://www.youtube.com/watch?v=BMUiFMZr7vk  
+Map https://www.youtube.com/watch?v=bCqtb-Z5YGQ  
+Reduce 1 https://www.youtube.com/watch?v=Wl98eZpkp-c  
+Reduce 2 https://www.youtube.com/watch?v=1DMolJ2FrNY  
