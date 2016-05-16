@@ -1,0 +1,17 @@
+.controls {
+    padding: 10px;
+    background-color: #eee;
+}
+
+
+
+.controls__view {
+
+    label {
+        margin: 4px 10px;
+    }
+
+    input[type="radio"] {
+        margin-right: 8px;
+    }
+}

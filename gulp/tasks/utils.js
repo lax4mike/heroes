@@ -1,10 +1,11 @@
 var gulp        = require("gulp"),
     plumber     = require("gulp-plumber"),
     notify      = require("gulp-notify"),
-    watch       = require("gulp-watch"),
     fs          = require("fs"),
+    path        = require("path"),
     runSequence = require("run-sequence"),
     color       = require("cli-color"),
+    watch       = require("gulp-watch"),
     argv        = require("yargs").argv,
     merge       = require("deepmerge");
 
@@ -25,9 +26,9 @@ var gulp        = require("gulp"),
  *            css: { ... },
  *            ...
  *        },
- *        watchers: [] 
+ *        watchers: []
  *    }
- *    
+ *
  *    user supplied keys: eg. {
  *        root: "../app/",
  *        dest: "../build_dev/",
@@ -77,7 +78,7 @@ module.exports.setConfig = function setConfig(settings){
 // use loadTaskConfig(taskName) later to reload this config for the current environment
 // thisTaskConfig should be an object that has a property "default" with the default config
 // the thisTaskConfig object can also contain properties that match with any given environment
-// see config comment above 
+// see config comment above
 module.exports.setTaskConfig = function setTaskConfig(task, thisTaskConfig){
 
     // make sure it's initialized
@@ -98,15 +99,15 @@ module.exports.setTaskConfig = function setTaskConfig(task, thisTaskConfig){
 
 // load the task for the current environment and merge with the default task config
 module.exports.loadTaskConfig = function loadTaskConfig(task){
-    
+
     // make sure the taskConfig is defined
     if (!config.taskConfig) { throw new Error("config.taskConfig is not defined"); }
 
     // load the config for this task (eg. css, js)
     var thisTaskConfig = config.taskConfig[task];
 
-    if (!thisTaskConfig) { 
-        throw new Error("'" + task + "' is not defined in config.taskConfig! use utils.setTaskConfig(task, config)"); 
+    if (!thisTaskConfig) {
+        throw new Error("'" + task + "' is not defined in config.taskConfig! use utils.setTaskConfig(task, config)");
     }
 
     // load default task config for this task
@@ -115,25 +116,28 @@ module.exports.loadTaskConfig = function loadTaskConfig(task){
     // default config is required. see the config notes at the top of this file
     if (!defaultTaskConfig) { throw new Error("'" + task + "' does not define a default config!"); }
 
-    // figure out the env variable 
+    // figure out the env variable
     // argv has precedence. (if it was passed in the command line. eg. gulp css --env prod)
     var env = argv.env || config.env;
 
     // if there is no env set, or there is no config set for this env, return default task config
     if (!env || !thisTaskConfig.hasOwnProperty(env)){ return defaultTaskConfig; }
 
-    // otherwise, load the environment config and merge it with the default config
+    // otherwise, load the environment config and deeply merge it with the default config
     var envTaskConfig = thisTaskConfig[env];
-    return merge(defaultTaskConfig, envTaskConfig); 
+    return merge(defaultTaskConfig, envTaskConfig);
 };
-
 
 
 // drano: make plumber with error handler attached
 module.exports.drano = function drano(){
     return plumber({
         errorHandler: function(err) {
-            notify.onError({ title: "<%= error.plugin %>", message: "<%= error.message %>", sound: "Beep" })(err);
+
+            // gulp notify is freezing jenkins builds, so we're only going to show this message if we're watching
+            if (config.watch){
+                notify.onError({ title: "<%= error.plugin %>", message: "<%= error.message %>", sound: "Beep" })(err);
+            }
             this.emit("end");
         }
     });
@@ -143,7 +147,7 @@ module.exports.drano = function drano(){
 
 // load tasks. given an array of tasks, require them
 module.exports.loadTasks = function loadTasks(tasks) {
-    
+
     // keep track of what tasks are loaded
     config.loadedTasks = config.loadedTasks || [];
 
@@ -156,43 +160,52 @@ module.exports.loadTasks = function loadTasks(tasks) {
 
 // load and start tasks
 module.exports.build = function build() {
-    
-    gulp.src('').pipe(notify("Building for '" + config.env + "' environment")); // gulp.src('') is a hack
 
-    // if config.tasks isn't defined, use the loadedTasks
+    // if config.tasks isn't defined, use the loadedTasks, if still not defined, exit
     if (!config.tasks){ config.tasks = config.loadedTasks; }
+    if (!config.tasks || config.tasks.length === 0){
+        logError("No tasks loaded!");
+        return;
+    }
 
-    // browserSync needs special treatment because it needs to be started AFTER the 
+
+    // browserSync needs special treatment because it needs to be started AFTER the
     // build directory has been created and filled (for livereload to work)
     if (config.watch) {
 
+        // gulp notify is freezing jenkins builds, so we're only going to show this message if we're watching
+        gulp.src("").pipe(notify("Building for '" + config.env + "' environment"));
+
         // load browserSync (not using loadTask so it doesn't get added to config.loadedTasks)
-        require("./browserSync");
+        require("./browser-sync.js");
 
         // console.log("[" + color.yellow("registered watchers") + "]\n", config.watchers);
 
         // start the gulp watch for each registered watcher
-        config.watchers.forEach(function(watcher){ 
+        if (config.watchers){
+            config.watchers.forEach(function(watcher){
 
-            // only watch this task if it's in our task list
-            if (config.tasks.indexOf(watcher.task) !== -1) { 
-                this.logYellow("watching", watcher.task + ":", watcher.files);
-                
-                // using gulp-watch instead of gulp.watch because gulp-watch will
-                // recognize when new files are added/deleted.
-                watch(watcher.files, function(){
-                    gulp.start([watcher.task]);
-                });
-            }
-        }.bind(this));
-      
+                // only watch this task if it's in our task list
+                if (config.tasks.indexOf(watcher.task) !== -1) {
+                    this.logYellow("watching", watcher.task + ":", JSON.stringify(watcher.files, null, 2));
 
-        runSequence(config.tasks, "browserSync");
+                    // using gulp-watch instead of gulp.watch because gulp-watch will
+                    // recognize when new files are added/deleted.
+                    watch(watcher.files, function(){
+                        gulp.start([watcher.task]);
+                    });
+                }
+            }.bind(this));
+        }
+
+        if (config.tasks){
+            runSequence(config.tasks, "browserSync");
+        }
     }
     else {
         gulp.start(config.tasks);
     }
- 
+
 };
 
 // add a function to the watchers
@@ -217,7 +230,7 @@ module.exports.logYellow = function logYellow(){
     if (args.length){
 
         var argString = args.map(function(arg){
-            return (typeof arg  === "object") ? JSON.stringify(arg) : arg.toString(); 
+            return (typeof arg  === "object") ? JSON.stringify(arg) : arg.toString();
         }).join(" ");
 
         console.log("[" + color.yellow(first) + "]", argString);
@@ -225,18 +238,36 @@ module.exports.logYellow = function logYellow(){
 };
 
 
+var logError = module.exports.logError = function logError() {
+
+    var args = (Array.prototype.slice.call(arguments));
+
+    if (args.length){
+
+        var argString = args.map(function(arg){
+            // return (typeof arg  === "object") ? JSON.stringify(arg) : arg.toString();
+            return arg.toString();
+        }).join("");
+
+        console.log(color.red(argString));
+    }
+
+
+};
+
+
 
 
 /** Object.assign polyfill **/
 if (!Object.assign) {
-  Object.defineProperty(Object, 'assign', {
+  Object.defineProperty(Object, "assign", {
     enumerable: false,
     configurable: true,
     writable: true,
     value: function(target, firstSource) {
-      'use strict';
+      "use strict";
       if (target === undefined || target === null) {
-        throw new TypeError('Cannot convert first argument to object');
+        throw new TypeError("Cannot convert first argument to object");
       }
 
       var to = Object(target);
@@ -261,3 +292,58 @@ if (!Object.assign) {
   });
 }
 
+// true if the filepath exists and is readable
+function fileExists(filepath){
+    try {
+        fs.accessSync(filepath, fs.R_OK);
+        return true;
+    }
+    catch(e) {
+        return false;
+    }
+}
+
+// will return the filepath of package.json in this directory,
+// or any parent directory
+// dirname is options, will use __dirname if missing
+var findPackageJson = module.exports.findPackageJson = function findPackageJson(dirname){
+
+    // use the current directory if dirname wasn't provided.
+    if (typeof(dirname) === "undefined"){
+        dirname = path.resolve(__dirname);
+    }
+
+    // use absolute path
+    dirname = path.resolve(dirname);
+
+    // create a filepath to package.json in this directory
+    var filepath = path.resolve(dirname, "package.json");
+
+    // check if it's there, if so, return the directory
+    if (fileExists(filepath)) {
+        return filepath;
+    }
+
+    // otherwise, check the parent
+    var parent = path.resolve(dirname, "..");
+
+    // if we've hit the root and haven't found it, return undefined
+    if (parent === dirname){
+        return undefined;
+    }
+
+    // otherwise, recurse into the parent
+    return findPackageJson(parent);
+};
+
+// looks for package.json in this directory and in parent directories
+// returns an array of package names (strings). eg ["react", "react-dom", "classnames"]
+module.exports.getInstalledNPMPackages = function getInstalledNPMPackages(){
+
+    var packageJsonPath = findPackageJson();
+
+    var packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
+    var dependencies = packageJson.dependencies;
+
+    return Object.keys(dependencies);
+};

@@ -5,6 +5,7 @@ var gulp          = require("gulp"),
     autoprefixer  = require("gulp-autoprefixer"),
     pixrem        = require("gulp-pixrem"),
     rename        = require("gulp-rename"),
+    debug         = require("gulp-debug"),
     header        = require("gulp-header"),
     concat        = require("gulp-concat"),
     sourcemaps    = require("gulp-sourcemaps");
@@ -16,11 +17,11 @@ utils.setTaskConfig("css", {
         src: config.root + "/scss/**/*.scss",
         dest: config.dest + "/css/",
 
-        filename: "superheroes.css",
+        filename: "index.css",
 
         sass: {
-            outputStyle: "nested",
-            includePaths: require("node-neat").includePaths
+            outputStyle: "nested"
+            // includePaths: require("node-neat").includePaths
         },
 
         autoprefixer: {
@@ -52,7 +53,7 @@ gulp.task("css", function() {
         .pipe(sourcemaps.init())
         .pipe(sass(css.sass))
         .pipe(autoprefixer(css.autoprefixer))
-        .pipe(pixrem())
+        .pipe(pixrem("16px",{atrules: true, html: true}))
         .pipe(concat(css.filename, {newLine: ""}))
         .pipe(rename({
             suffix: "-generated"
@@ -65,5 +66,6 @@ gulp.task("css", function() {
 
     return gulpCss
         .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest(css.dest));
+        .pipe(gulp.dest(css.dest))
+        .pipe(debug({title: "css:"}));
 });

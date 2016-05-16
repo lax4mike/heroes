@@ -3,53 +3,33 @@ var gulp           = require("gulp"),
     config         = utils.loadConfig(),
     concat         = require("gulp-concat"),
     filter         = require("gulp-filter"),
+    rename         = require("gulp-rename"),
+    debug          = require("gulp-debug"),
     gulpif         = require("gulp-if"),
     uglify         = require("gulp-uglify"),
-    rename         = require("gulp-rename"),
-    minifyCSS      = require("gulp-minify-css"),
     sourcemaps     = require("gulp-sourcemaps"),
-    browserify     = require("browserify"),
-    source         = require("vinyl-source-stream"), 
-    gStreamify     = require("gulp-streamify"), // to fix uglify https://github.com/nfroidure/gulp-streamify
     mainBowerFiles = require("main-bower-files");
 
-var bowerRoot = config.root + "/vendor";
+var bowerRoot = config.root + "/polyfill";
 
 // bower settings
 utils.setTaskConfig("bower", {
-    
+
     default: {
         root: bowerRoot,
 
         js: {
-            filename: "vendor.js",
+            filename: "polyfill.js",
             dest: config.dest + "/js"
         },
-        
-        css: {
-            filename: "vendor.css",
-            dest: config.dest + "/css"
-        },
 
         // to skip, set value to false or omit entirely
         // otherwise, pass options object (can be empty {})
-        uglify: false,
-
-        // to skip, set value to false or omit entirely
-        // otherwise, pass options object (can be empty {})
-        minifyCSS: false,
-
-        browserify: {
-            debug: true // include sourcemaps
-        }
+        uglify: false
     },
 
     prod: {
-        uglify: {},
-        minifyCSS: {},
-        browserify: {
-            debug: false // include sourcemaps
-        }
+        uglify: {}
     }
 });
 
@@ -83,33 +63,15 @@ gulp.task("bower", function(next){
     }
 
     // log the bower files to the gulp output
-    utils.logYellow("bower files", "\n\t" + bowerfiles.join("\n\t"));
+    utils.logYellow("polyfill files", "\n\t" + bowerfiles.join("\n\t"));
 
-
-    // create browserify bundle with the bower packages exposed
-    var browserifiedFiles = (function(){
-
-        var b = browserify(bower.browserify || {}); // pass options
-
-        bowerfiles
-            .filter(function(file){
-                return file.match(new RegExp(".js$"));
-            })
-            .forEach(function(filepath){
-                // use .require instead of .add so it'a available from other bundles
-                b.require(filepath, { expose: getBowerPackageName(filepath) }); 
-            });
-
-        return b.bundle();
-    }());
-
-     // make js
-    gulp.src(bowerfiles)
+    // make js
+    return gulp.src(bowerfiles)
         .pipe(utils.drano())
         .pipe(filterByExtension("js"))
         .pipe(sourcemaps.init())  // start sourcemaps
 
-        // putting a ; between each file to avoid problems when a library doesn't end in ;        
+        // putting a ; between each file to avoid problems when a library doesn't end in ;
         .pipe(concat(bower.js.filename, {newLine: ";"}))
 
         .pipe(gulpif((bower.uglify), uglify(bower.uglify)))
@@ -117,35 +79,14 @@ gulp.task("bower", function(next){
             suffix: "-generated"
         }))
         .pipe(sourcemaps.write("./")) // end sourcemaps
-        .pipe(gulp.dest(bower.js.dest));
-
-    // make css
-    gulp.src(bowerfiles)
-        .pipe(utils.drano())
-        .pipe(filterByExtension("css"))
-        .pipe(concat(bower.css.filename))
-        .pipe(gulpif((bower.minifyCSS), minifyCSS(bower.minifyCSS)))
-        .pipe(rename({
-            suffix: "-generated"
-        }))
-        .pipe(gulp.dest(bower.css.dest));
-        
-
-
-    next();
+        .pipe(gulp.dest(bower.js.dest))
+        .pipe(debug({title: "bower: "}));
 
 });
 
 
-function filterByExtension(extension){  
+function filterByExtension(extension){
     return filter(function(file){
         return file.path.match(new RegExp("." + extension + "$"));
     });
 }
-
-// given /app/vendor/bower_components/classnames/index.js returns "classnames"
-function getBowerPackageName(filepath) {
-    return filepath.replace(/.*?\/bower_components\/(.*?)\/.*/, "$1");
-}
-
-

@@ -1,3 +1,3 @@
 gulp prod
-ssh oceanstar 'mkdir -p ~/www/heros'
-scp -r ../app/* oceanstar:~/www/heros
+ssh oceanstar 'mkdir -p ~/www/heroes'
+scp -r ../app/* oceanstar:~/www/heroes

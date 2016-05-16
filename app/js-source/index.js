@@ -1,22 +1,27 @@
 import React from "react";
-import App   from "./components/App.jsx";
+import ReactDOM from "react-dom";
+import HeroApp        from "./components/HeroApp.jsx";
+import JsonViewer from "./components/JsonViewer.jsx";
 
 
 fetch("data/heroes.json")
-    .then(function(response){
+    .then((response) => {
         // Convert response to JSON
         return response.json();
     })
-    .then(function(json){
+    .then((json) => {
 
         const allHeroes = json.heroes;
 
-        const myData = getMyData(allHeroes);
-
-        React.render(
-            <App allHeroes={allHeroes} myData={myData} />,
-            document.querySelector(".react-mount")
+        ReactDOM.render(
+            <HeroApp allHeroes={allHeroes} />,
+            document.querySelector(".js-react-mount")
         );
+
+        // ReactDOM.render(
+        //     <JsonViewer allHeroes={allHeroes} data={getMyData(allHeroes)} />,
+        //     document.querySelector(".js-react-mount")
+        // );
 
     });
 

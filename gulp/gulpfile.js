@@ -1,18 +1,18 @@
 /**
  *  Usage:
- *      Once per computer: 
+ *      Once per computer:
  *         $ npm install -g gulp
  *
- *      Once per project, in gulp folder: 
+ *      Once per project, in gulp folder:
  *         $ npm install
  *
  *
- *      Running clumped tasks (defined in this file) -- 
+ *      Running clumped tasks (defined in this file) --
  *      see tasks/utils.js config
  *         $ gulp dev
  *
  *      Running single task (task defined in /tasks.  eg. /tasks/css.js)
- *         $ gulp css            // will use the default config 
+ *         $ gulp css            // will use the default config
  *         $ gulp css --env prod // will use the prod config
  *
  *      For details on setConfig, see "user supplied keys" in /tasks/utils.js
@@ -27,14 +27,14 @@ var gulp    = require("gulp"),
 
 // set some defaults
 utils.setConfig({
-    root  : path.resolve("../app"),
-    dest  : path.resolve("../app"),
+    root  : path.resolve(__dirname, "../app"),
+    dest  : path.resolve(__dirname, "../app/build"),
     env   : ""
 });
 
 
 // load the tasks
-utils.loadTasks(["js", "css", "bower"]);
+utils.loadTasks(["js", "js-common", "css", "bower"]);
 
 /**
  * dev task
@@ -47,15 +47,15 @@ gulp.task("dev", function(){
         watch : true
     });
 
-    // build with this config 
-    utils.build(); 
+    // build with this config
+    utils.build();
 
 });
 
 /**
  * prod task
  */
-gulp.task("prod", function(){  
+gulp.task("prod", function(){
 
     // set the prod config (cache in utils.js)
     utils.setConfig({
@@ -73,4 +73,3 @@ gulp.task("prod", function(){
 
 // Default Task (run when you run 'gulp'). dev envirnoment
 gulp.task("default", [config.local.defaultTask || "dev"]);
-

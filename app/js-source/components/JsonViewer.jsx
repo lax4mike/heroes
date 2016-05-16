@@ -19,8 +19,18 @@ export default React.createClass({
         };
 
         return (
-            <div className="json" style={jsonStyles}>
-                { JSON.stringify(this.props.data, null, 2) }
+            <div className="app">
+
+                <div className="header">
+                    <h1>Superheroes!</h1>
+                    <a href="data/heroes.json" target="_blank">heroes.json</a>
+                </div>
+
+                <h2>My Data</h2>
+                <div className="json" style={jsonStyles}>
+                    { JSON.stringify(this.props.data, null, 2) }
+                </div>
+
             </div>
         );
     }
