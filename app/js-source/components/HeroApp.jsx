@@ -13,7 +13,8 @@ export default React.createClass({
 
     getInitialState: function(){
         return {
-            currentViewId: viewTypes[0].id
+            currentViewId: viewTypes[0].id,
+            filterQuery: ""
         };
     },
 
@@ -23,9 +24,18 @@ export default React.createClass({
         });
     },
 
+    handleFilterChange: function(query){
+        this.setState({ filterQuery: query });
+    },
+
     render: function(){
 
-        const { currentViewId } = this.state;
+        const { currentViewId, filterQuery } = this.state;
+        const { allHeroes } = this.props;
+
+        // filter the heroes list by our filter query
+        const filteredHeros = allHeroes
+            .filter(h => h.name.match(new RegExp(filterQuery, "i")));
 
         return (
             <div className="app">
@@ -36,14 +46,25 @@ export default React.createClass({
                 </div>
 
                 <Controls
+                    currentViewId={currentViewId}
                     onViewChange={this.handleViewChange}
-                    currentViewId={currentViewId}
+                    filterQuery={filterQuery}
+                    onFilterChange={this.handleFilterChange}
                 />
-                
-                <HeroList
-                    heros={this.props.allHeroes}
-                    currentViewId={currentViewId}
-                />
+
+                { // show list of heros or "no results"
+                (filteredHeros.length > 0)
+                ? (
+                    <HeroList
+                        heros={filteredHeros}
+                        currentViewId={currentViewId}
+                    />
+                )
+                : (
+                    <div className="no-results-message">
+                        No heroes with the name '{filterQuery}'
+                    </div>
+                )}
 
             </div>
         );

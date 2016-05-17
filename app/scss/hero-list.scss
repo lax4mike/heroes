@@ -1,5 +1,12 @@
 .hero-list.hero-list--grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+}
+
+.no-results-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #888;
 }

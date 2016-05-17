@@ -6,20 +6,30 @@ export default React.createClass({
     displayName: "Controls",
 
     propTypes: {
+        currentViewId: PropTypes.string.isRequired,
         onViewChange: PropTypes.func.isRequired,
-        currentViewId: PropTypes.string.isRequired
+        filterQuery: PropTypes.string.isRequired,
+        onFilterChange: PropTypes.func.isRequired
     },
 
     handleViewChange: function(e){
         this.props.onViewChange(e.target.value);
     },
 
+    handleFilterChange: function(e){
+        this.props.onFilterChange(e.target.value)
+    },
+
     render: function(){
 
-        const { currentViewId } = this.props;
+        const { currentViewId, filterQuery } = this.props;
 
         return (
             <div className="controls">
+
+                <div className="contols__filter">
+                    Filter: <input type="text" value={filterQuery} onChange={this.handleFilterChange}/>
+                </div>
 
                 <div className="controls__view">
                     { // show radio buttons for each viewType
