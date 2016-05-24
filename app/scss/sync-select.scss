@@ -1,0 +1,40 @@
+$min-width: 200px;
+
+.sync-select {
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+
+    select {
+        display: none;
+    }
+}
+
+.sync-select__box {
+    display: inline-block;
+    min-width: $min-width;
+    padding: 8px;
+    cursor: pointer;
+    background: #ddd;
+    box-sizing: border-box;
+}
+
+.sync-select__dropdown {
+    position: absolute;
+    top: 100%;
+    min-width: $min-width;
+    padding: 2px;
+    cursor: pointer;
+    background: #eee;
+    box-sizing: border-box;
+}
+
+.sync-select__option {
+    padding: 8px;
+    border: 1px solid transparent;
+
+
+    &:hover {
+        border: 1px solid #ccc;
+    }
+}

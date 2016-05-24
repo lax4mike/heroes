@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react";
 import HeroList   from "./HeroList.jsx";
-import Controls    from "./Controls.jsx";
-import viewTypes from "../common/viewTypes.js";
+import Controls   from "./Controls.jsx";
+import viewTypes  from "../common/viewTypes.js";
 
 export default React.createClass({
 
@@ -14,7 +14,8 @@ export default React.createClass({
     getInitialState: function(){
         return {
             currentViewId: viewTypes[0].id,
-            filterQuery: ""
+            filterQuery: "",
+            selectedSort: "mike"
         };
     },
 
@@ -28,14 +29,30 @@ export default React.createClass({
         this.setState({ filterQuery: query });
     },
 
+    handleSortChange: function(selectedSort){
+        this.setState({
+            selectedSort: selectedSort.value
+        });
+    },
+
     render: function(){
 
-        const { currentViewId, filterQuery } = this.state;
+        const { currentViewId, filterQuery, selectedSort } = this.state;
         const { allHeroes } = this.props;
 
         // filter the heroes list by our filter query
         const filteredHeros = allHeroes
             .filter(h => h.name.match(new RegExp(filterQuery, "i")));
+
+        if (selectedSort){
+            filteredHeros.sort((a, b) => {
+                return b.stats[selectedSort] - a.stats[selectedSort]
+            });
+        }
+
+        // format the sort options in a way that SyncSelect likes
+        const sortOptions = Object.keys(allHeroes[0].stats)
+            .map(k => ({ label: k, value: k }));
 
         return (
             <div className="app">
@@ -45,12 +62,18 @@ export default React.createClass({
                     <a href="data/heroes.json" target="_blank">heroes.json</a>
                 </div>
 
+
+
                 <Controls
+                    viewTypes={viewTypes}
                     currentViewId={currentViewId}
                     onViewChange={this.handleViewChange}
                     filterQuery={filterQuery}
                     onFilterChange={this.handleFilterChange}
+                    sortOptions={sortOptions}
+                    onSortChange={this.handleSortChange}
                 />
+
 
                 { // show list of heros or "no results"
                 (filteredHeros.length > 0)

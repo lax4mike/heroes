@@ -1,15 +1,20 @@
 import React, { PropTypes } from "react";
-import viewTypes from "../common/viewTypes.js";
+import SyncSelect from "./SyncSelect.jsx";
+
 
 export default React.createClass({
 
-    displayName: "Controls",
-
     propTypes: {
-        currentViewId: PropTypes.string.isRequired,
-        onViewChange: PropTypes.func.isRequired,
-        filterQuery: PropTypes.string.isRequired,
-        onFilterChange: PropTypes.func.isRequired
+        viewTypes: PropTypes.arrayOf(PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            id   : PropTypes.string.isRequired
+        })).isRequired,
+        currentViewId  : PropTypes.string.isRequired,
+        onViewChange   : PropTypes.func.isRequired,
+        filterQuery    : PropTypes.string.isRequired,
+        onFilterChange : PropTypes.func.isRequired,
+        sortOptions    : PropTypes.array.isRequired,
+        onSortChange   : PropTypes.func.isRequired
     },
 
     handleViewChange: function(e){
@@ -20,9 +25,13 @@ export default React.createClass({
         this.props.onFilterChange(e.target.value)
     },
 
+    handleSortChange: function(selected){
+        this.props.onSortChange(selected)
+    },
+
     render: function(){
 
-        const { currentViewId, filterQuery } = this.props;
+        const { currentViewId, filterQuery, viewTypes, sortOptions } = this.props;
 
         return (
             <div className="controls">
@@ -45,6 +54,14 @@ export default React.createClass({
                             {view.label}
                         </label>
                     ))}
+                </div>
+
+                <div className="sort">
+                    Sort:
+                    <SyncSelect
+                        options={sortOptions}
+                        onSelectionChange={this.handleSortChange}
+                    />
                 </div>
 
             </div>
